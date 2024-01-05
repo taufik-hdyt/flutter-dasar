@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
+main() {
   runApp(MyApp());
 }
 
@@ -8,26 +8,32 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("My App"),
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
+          title: Text("Colum"),
           centerTitle: true,
+          backgroundColor: Colors.blue,
         ),
-        body: const Center(
-          child: Text(
-            "Hello world",
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-                fontSize: 30,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Poppins'),
-          ),
-        ),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 200,
+                height: 50,
+                color: Colors.green,
+              ),
+              Container(
+                width: 100,
+                height: 50,
+                color: Colors.blue,
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                color: Colors.amber,
+              ),
+            ]),
       ),
     );
   }
