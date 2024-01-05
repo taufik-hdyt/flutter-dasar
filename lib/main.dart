@@ -10,50 +10,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("List Tile"),
-          backgroundColor: Colors.blue,
-          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
-          centerTitle: true,
+          title: const Text("Image"),
         ),
-        body: ListView(
-          children: [
-            ListTile(
-              contentPadding: EdgeInsets.all(5),
-              title: Text("Taufik"),
-              subtitle: Text(
-                "Pesan pesan terkirim namun tidak terbalaskan",
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-              leading: CircleAvatar(),
-              trailing: Text("12:30"),
-              tileColor: Colors.amber[50],
-
-              // onCLICK
-              // onTap: (){
-              //   return
-              // },
+        body: Center(
+          child: Container(
+            width: 400,
+            height: 500,
+            color: Colors.amber,
+            child: const Image(
+              fit: BoxFit.contain,
+              // image: AssetImage("assets/images/profile.png")
+              image: NetworkImage(
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUoEMz5_7_SCh1OKUXB-5IIb48bpM3t8hHd9p-SxYUWQ&s"),
             ),
-            Divider(),
-            ListTile(
-              title: Text("Taufik"),
-              subtitle: Text("Subtitle"),
-              leading: CircleAvatar(),
-              trailing: Text("12:30"),
-            ),
-            ListTile(
-              title: Text("Taufik"),
-              subtitle: Text("Subtitle"),
-              leading: CircleAvatar(),
-              trailing: Text("12:30"),
-            ),
-            ListTile(
-              title: Text("Taufik"),
-              subtitle: Text("Subtitle"),
-              leading: CircleAvatar(),
-              trailing: Text("12:30"),
-            ),
-          ],
+          ),
         ),
       ),
     );

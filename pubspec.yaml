@@ -14,9 +14,13 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+  
 flutter:
   uses-material-design: true
 fonts: 
 - family: Poppins
   fonts: 
-    - asset: assets\fonts\Poppins\Poppins-Regular.ttf
+  - asset: assets\fonts\Poppins\Poppins-Regular.ttf
+assets:
+  - assets/images/profile.png
