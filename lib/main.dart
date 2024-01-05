@@ -1,57 +1,43 @@
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  var faker = new Faker();
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final num counter = 1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Extract Widget"),
+          title: const Text("Statefull widget"),
         ),
-        body: ListView.builder(
-          itemCount: 100,
-          itemBuilder: (context, index) {
-            return ChatItem(
-                imageUrl: faker.image.image(),
-                subtitle: faker.lorem.sentence(),
-                title: faker.person.name());
-          },
+        body: const Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              "100",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                TextButton(onPressed: null, child: Icon(Icons.remove)),
+                TextButton(onPressed: null, child: Icon(Icons.add))
+              ],
+            )
+          ],
         ),
       ),
-    );
-  }
-}
-
-class ChatItem extends StatelessWidget {
-  final String imageUrl;
-  final String title;
-  final String subtitle;
-
-  const ChatItem({
-    Key? key,
-    this.imageUrl = "",
-    this.title = "",
-    this.subtitle = "",
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundImage: NetworkImage(imageUrl),
-      ),
-      title: Text(title),
-      subtitle: Text(
-        subtitle,
-        maxLines: 1,
-      ),
-      trailing: Text("10:32"),
     );
   }
 }
