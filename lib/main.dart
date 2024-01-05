@@ -17,7 +17,16 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
         body: const Center(
-          child: Text("Hay"),
+          child: Text(
+            "Hello world",
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                fontSize: 30,
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Poppins'),
+          ),
         ),
       ),
     );
