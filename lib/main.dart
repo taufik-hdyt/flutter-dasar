@@ -5,52 +5,55 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  final List<Color> myColor = [
-    Colors.red,
-    Colors.yellow,
-    Colors.green,
-    Colors.blue
-  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("List View"),
+          title: const Text("List Tile"),
           backgroundColor: Colors.blue,
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
+          centerTitle: true,
         ),
-        // menambahkan list view
-        // body: ListView.builder(
-        //   itemCount: myColor.length,
-        //   itemBuilder: (context, index) {
-        //     return Container(
-        //       height: 300,
-        //       width: 300,
-        //       color: myColor[index],
-        //     );
-        //   },
-        // ),
+        body: ListView(
+          children: [
+            ListTile(
+              contentPadding: EdgeInsets.all(5),
+              title: Text("Taufik"),
+              subtitle: Text(
+                "Pesan pesan terkirim namun tidak terbalaskan",
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              leading: CircleAvatar(),
+              trailing: Text("12:30"),
+              tileColor: Colors.amber[50],
 
-        // menambahkan spasi dan warna spasinya
-        body: ListView.separated(
-          separatorBuilder: (context, index) {
-            return Container(
-              height: 10,
-              color: Colors.black,
-            );
-          },
-          itemCount: myColor.length,
-          itemBuilder: (context, index) {
-            // Mengembalikan return Container =============
-            // return Container(
-            //   height: 300,
-            //   width: 300,
-            //   color: myColor[index],
-            // );
-
-            // Mengembalikan return Text =============
-            return Text("Hallo");
-          },
+              // onCLICK
+              // onTap: (){
+              //   return
+              // },
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Taufik"),
+              subtitle: Text("Subtitle"),
+              leading: CircleAvatar(),
+              trailing: Text("12:30"),
+            ),
+            ListTile(
+              title: Text("Taufik"),
+              subtitle: Text("Subtitle"),
+              leading: CircleAvatar(),
+              trailing: Text("12:30"),
+            ),
+            ListTile(
+              title: Text("Taufik"),
+              subtitle: Text("Subtitle"),
+              leading: CircleAvatar(),
+              trailing: Text("12:30"),
+            ),
+          ],
         ),
       ),
     );
